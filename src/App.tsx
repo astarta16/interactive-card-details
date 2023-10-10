@@ -1,42 +1,30 @@
-import React from 'react';
-import BgImage from './assets/bg-main-desktop.png';
-import CardFront from './assets/bg-card-front.png';
-import CardBack from './assets/bg-card-back.png';
-import styled from 'styled-components';
-import Form from './Components/Form';
+import styled from "styled-components";
+import Card from "./Components/Card";
+import Form from "./Components/Form";
 
-const Container = styled.div`
-  position: relative;
+const AppContainer = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
-const CardImageBack = styled.img`
-  position: absolute;
-  top: 60%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-  width: 30%;
-  height: auto;
+const CardContainer = styled.div`
+  width: 80%;
 `;
 
-const CardImageFront = styled.img`
-  position: absolute;
-  top: 25%;
-  left: 22%;
-  transform: translate(-50%, -50%);
-  width: 30%;
-  height: auto;
+const FormContainer = styled.div`
+  width: 20%;
 `;
 
 function App(): JSX.Element {
   return (
-    <div>
-      <Container>
-        <img src={BgImage} alt="Background" />
-        <CardImageFront src={CardFront} alt="Card Front" />
-        <CardImageBack src={CardBack} alt="Card Back" />
-      </Container>
-      <Form />
-    </div>
+    <AppContainer>
+      <CardContainer>
+        <Card />
+      </CardContainer>
+      <FormContainer>
+        <Form />
+      </FormContainer>
+    </AppContainer>
   );
 }
 
