@@ -1,12 +1,13 @@
-import BgImage from './assets/bg-main-desktop.png'
-import CardFront from './assets/bg-card-front.png'
-import CardBack from './assets/bg-card-back.png'
-import styled from 'styled-components'
+import React from 'react';
+import BgImage from './assets/bg-main-desktop.png';
+import CardFront from './assets/bg-card-front.png';
+import CardBack from './assets/bg-card-back.png';
+import styled from 'styled-components';
+import Form from './Components/Form';
 
 const Container = styled.div`
   position: relative;
 `;
-
 
 const CardImageBack = styled.img`
   position: absolute;
@@ -26,13 +27,16 @@ const CardImageFront = styled.img`
   height: auto;
 `;
 
-function App() {
+function App(): JSX.Element {
   return (
-    <Container>
-      <img src={BgImage} />
-      <CardImageFront src={CardFront} />
-      <CardImageBack src={CardBack} />
-    </Container>
+    <div>
+      <Container>
+        <img src={BgImage} alt="Background" />
+        <CardImageFront src={CardFront} alt="Card Front" />
+        <CardImageBack src={CardBack} alt="Card Back" />
+      </Container>
+      <Form />
+    </div>
   );
 }
 
