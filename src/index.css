@@ -9,4 +9,5 @@
 body {
     min-height: 100vh;
     font-family: 'Space Grotesk', sans-serif;
+    overflow: hidden;
 }
