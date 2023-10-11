@@ -41,15 +41,25 @@ const FormSubmit = styled.button`
   font-weight: 500;
 `;
 
+
+const Label = styled.label`
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+letter-spacing: 2px;
+text-transform: uppercase;
+`;
+
 const schema = yup.object().shape({
   fullName: yup.string().required("Full Name is required"),
   cardNumber: yup
     .string()
     .matches(/^[0-9]+$/, "Wrong format, numbers only")
     .required("Card Number is required"),
-  expirationMonth: yup.string().required("Month is required"),
-  expirationYear: yup.string().required("Year is required"),
-  cvc: yup.string().required("CVC is required"),
+  expirationMonth: yup.string().required("Can’t be blank"),
+  expirationYear: yup.string().required("Can’t be blank"),
+  cvc: yup.string().required("Can’t be blank"),
 });
 
 type FormData = {
@@ -77,7 +87,7 @@ function Form() {
     <FormWrapper>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label htmlFor="fullName">Cardholder Name</label>
+          <Label htmlFor="fullName">Cardholder Name</Label>
           <Controller
             name="fullName"
             control={control}
@@ -88,7 +98,7 @@ function Form() {
         </div>
 
         <div>
-          <label htmlFor="cardNumber">Card Numbers</label>
+          <Label htmlFor="cardNumber">Card Numbers</Label>
           <Controller
             name="cardNumber"
             control={control}
@@ -102,7 +112,7 @@ function Form() {
 
         <FormInputRow>
           <div>
-            <label htmlFor="expirationMonth">MM</label>
+            <Label htmlFor="expirationMonth">MM</Label>
             <Controller
               name="expirationMonth"
               control={control}
@@ -114,7 +124,7 @@ function Form() {
             )}
           </div>
           <div>
-            <label htmlFor="expirationYear">YY</label>
+            <Label htmlFor="expirationYear">YY</Label>
             <Controller
               name="expirationYear"
               control={control}
@@ -126,7 +136,7 @@ function Form() {
             )}
           </div>
           <div>
-            <label htmlFor="cvc">CVC</label>
+            <Label htmlFor="cvc">CVC</Label>
             <Controller
               name="cvc"
               control={control}
