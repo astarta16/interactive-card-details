@@ -4,8 +4,7 @@ import { useForm, Controller } from "react-hook-form";
 import * as yup from "yup";
 
 const FormWrapper = styled.div`
-  width: 80%;
-  margin: 0 auto;
+  width: 90%;
   padding: 20px;
 `;
 
@@ -18,7 +17,7 @@ const FormError = styled.p`
 
 const FormInput = styled.input`
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -27,17 +26,19 @@ const FormInput = styled.input`
 const FormInputRow = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  gap: 15px;
 `;
 
 const FormSubmit = styled.button`
   background-color: #21092f;
   color: #fff;
-  padding: 10px 20px;
+  padding: 17px 20px;
   border: none;
   border-radius: 3px;
   cursor: pointer;
   width: 100%;
+  font-size: 18px;
+  font-weight: 500;
 `;
 
 const schema = yup.object().shape({
@@ -136,7 +137,7 @@ function Form() {
           </div>
         </FormInputRow>
 
-        <FormSubmit type="submit">Submit</FormSubmit>
+        <FormSubmit type="submit">Confirm</FormSubmit>
       </form>
     </FormWrapper>
   );

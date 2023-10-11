@@ -8,11 +8,11 @@ const AppContainer = styled.div`
 `;
 
 const CardContainer = styled.div`
-  width: 80%;
+  width: 60%;
 `;
 
 const FormContainer = styled.div`
-  width: 20%;
+  width: 35%;
 `;
 
 function App(): JSX.Element {

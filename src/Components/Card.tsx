@@ -9,20 +9,14 @@ const Container = styled.div`
 
 const CardImageFront = styled.img`
   position: absolute;
-  top: 25%;
-  left: 25%;
-  transform: translate(-50%, -50%);
-  width: 30%;
-  height: auto;
+  top: 10%;
+  left: 20%;
 `;
 
 const CardImageBack = styled.img`
   position: absolute;
-  top: 55%;
+  bottom: 30%;
   left: 30%;
-  transform: translate(-50%, -50%);
-  width: 30%;
-  height: auto;
 `;
 
 function Card() {
