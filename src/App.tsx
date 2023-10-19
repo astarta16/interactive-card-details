@@ -3,6 +3,14 @@ import Card from "./Components/Card";
 import Form from "./Components/Form";
 import { useState } from "react";
 
+type FormData = {
+  fullName: string;
+  cardNumber: string;
+  expirationMonth: string;
+  expirationYear: string;
+  cvc: string;
+};
+
 function App(): JSX.Element {
   const [formData, setFormData] = useState<FormData | null>(null);
 

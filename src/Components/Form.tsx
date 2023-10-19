@@ -1,4 +1,3 @@
-import React from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm, Controller } from "react-hook-form";
 import * as yup from "yup";
@@ -79,17 +78,10 @@ function Form({ onFormSubmit }: FormProps) {
   const {
     handleSubmit,
     control,
-    watch,
     formState: { errors },
   } = useForm<FormData>({
     resolver: yupResolver(schema),
   });
-
-  const fullNAme = watch("fullName");
-  const cardNumber = watch("cardNumber");
-  const expirationMonth = watch("expirationMonth");
-  const expirationYear = watch("expirationYear");
-  const cvc = watch("cvc");
 
   const onSubmit = (data: FormData) => {
     onFormSubmit(data);

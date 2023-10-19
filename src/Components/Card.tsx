@@ -1,8 +1,15 @@
-import React from "react";
 import styled from "styled-components";
 import BgImage from "../assets/bg-main-desktop.png";
 import CardFront from "../assets/bg-card-front.png";
 import CardBack from "../assets/bg-card-back.png";
+
+type FormData = {
+  fullName: string;
+  cardNumber: string;
+  expirationMonth: string;
+  expirationYear: string;
+  cvc: string;
+};
 
 const Container = styled.div`
   position: relative;
