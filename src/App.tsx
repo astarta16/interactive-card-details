@@ -1,6 +1,28 @@
 import styled from "styled-components";
 import Card from "./Components/Card";
 import Form from "./Components/Form";
+import { useState } from "react";
+
+function App(): JSX.Element {
+  const [formData, setFormData] = useState<FormData | null>(null);
+
+  const handleFormSubmit = (data: FormData) => {
+    setFormData(data);
+  };
+
+  return (
+    <AppContainer>
+      <CardContainer>
+        <Card formData={formData} />
+      </CardContainer>
+      <FormContainer>
+        <Form onFormSubmit={handleFormSubmit} />
+      </FormContainer>
+    </AppContainer>
+  );
+}
+
+export default App;
 
 const AppContainer = styled.div`
   display: flex;
@@ -14,18 +36,3 @@ const CardContainer = styled.div`
 const FormContainer = styled.div`
   width: 35%;
 `;
-
-function App(): JSX.Element {
-  return (
-    <AppContainer>
-      <CardContainer>
-        <Card />
-      </CardContainer>
-      <FormContainer>
-        <Form />
-      </FormContainer>
-    </AppContainer>
-  );
-}
-
-export default App;

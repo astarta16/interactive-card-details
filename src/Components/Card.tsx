@@ -1,7 +1,8 @@
+import React from "react";
+import styled from "styled-components";
 import BgImage from "../assets/bg-main-desktop.png";
 import CardFront from "../assets/bg-card-front.png";
 import CardBack from "../assets/bg-card-back.png";
-import styled from "styled-components";
 
 const Container = styled.div`
   position: relative;
@@ -21,40 +22,52 @@ const CardImageBack = styled.img`
 
 const CardText = styled.div`
   position: absolute;
-  color: white; 
+  color: white;
   transform: translate(-50%, -50%);
   font-size: 28px;
-font-weight: 500;
-letter-spacing: 3.422px;
+  font-weight: 500;
+  letter-spacing: 3.422px;
 `;
 
 const CardName = styled.div`
-  color: white; 
+  color: white;
   font-size: 14px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-letter-spacing: 2px;
-text-transform: uppercase;
-transform: translate(-50%, -50%);
-position: absolute;
-
-
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+  position: absolute;
 `;
 
-function Card() {
+interface CardProps {
+  formData: FormData | null;
+}
+
+function Card({ formData }: CardProps) {
   return (
     <Container>
       <img src={BgImage} alt="Background" />
       <CardImageFront src={CardFront} alt="Card Front" />
-      <CardText style={{ top: "25%", left: "43%" }}>0000 0000 0000 0000</CardText>
-      <CardName style={{ top: "33%", left: "30%" }}>JANE APPLESEED</CardName>
-      <CardName style={{ top: "33%", left: "60%" }}>00/00</CardName>
+      {formData ? (
+        <>
+          <CardText style={{ top: "25%", left: "43%" }}>
+            {formData.cardNumber}
+          </CardText>
+          <CardName style={{ top: "33%", left: "30%" }}>
+            {formData.fullName}
+          </CardName>
+          <CardName style={{ top: "33%", left: "60%" }}>
+            {formData.expirationMonth}/{formData.expirationYear}
+          </CardName>
+        </>
+      ) : null}
 
-
-      
       <CardImageBack src={CardBack} alt="Card Back" />
-      <CardText style={{ top: "56%", left: "64%" }}>000</CardText>
+      {formData ? (
+        <CardText style={{ top: "56%", left: "64%" }}>{formData.cvc}</CardText>
+      ) : null}
     </Container>
   );
 }
