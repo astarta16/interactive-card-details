@@ -65,7 +65,7 @@ function Card({ formData }: CardProps) {
           <CardName style={{ top: "33%", left: "30%" }}>
             {formData.fullName}
           </CardName>
-          <CardName style={{ top: "33%", left: "60%" }}>
+          <CardName style={{ top: "33%", left: "55%" }}>
             {formData.expirationMonth}/{formData.expirationYear}
           </CardName>
         </>
