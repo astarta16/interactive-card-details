@@ -33,7 +33,7 @@ function App(): JSX.Element {
 export default App;
 
 const AppContainer = styled.div`
-  /* display: flex; */
+  display: flex;
   align-items: center;
 `;
 

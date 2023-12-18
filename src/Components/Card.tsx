@@ -13,18 +13,25 @@ type FormData = {
 
 const Container = styled.div`
   position: relative;
+  height: 100vh; 
+  width: 50%;
+  background-image: url(${BgImage}); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
 `;
+
 
 const CardImageFront = styled.img`
   position: absolute;
   top: 10%;
-  left: 20%;
+  left: 35%;
 `;
 
 const CardImageBack = styled.img`
   position: absolute;
   bottom: 30%;
-  left: 30%;
+  left: 50%;
 `;
 
 const CardText = styled.div`
@@ -52,10 +59,11 @@ interface CardProps {
   formData: FormData | null;
 }
 
+
 function Card({ formData }: CardProps) {
   return (
     <Container>
-      <img src={BgImage} alt="Background" />
+     
       <CardImageFront src={CardFront} alt="Card Front" />
       {formData ? (
         <>
